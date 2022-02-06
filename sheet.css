@@ -1,0 +1,1317 @@
+/* === SHEET === */
+
+div,
+button,
+span,
+textarea,
+input,
+select {
+    box-sizing: border-box;
+}
+
+textarea
+, input
+, select {
+    border-radius: 0px;
+    width: unset;
+    height: unset;
+    line-height: unset;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+input[type=text]
+, input[type=number]
+, select
+, textarea {
+    border: 1px solid transparent;
+    vertical-align: baseline;
+}
+input[type=text]
+, textarea {
+    padding: 0px 2px 0px 2px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+input[type=checkbox]
+, input[type=radio] {
+    border: none;
+}
+input[type=number] {
+    text-align: center;
+}
+input[type=number].nospin::-webkit-inner-spin-button,
+input[type=number].nospin::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+input[type=number].nospin {
+    -moz-appearance:textfield;
+    width: 2em !important;
+}
+select {
+    width: auto;
+    max-width: 10em;
+    flex-grow: 0;
+}
+.pc {
+    --inputfont: 'Patrick Hand';
+    --inputfontsize: 1.15em;
+}
+input[type="checkbox"].easy-font:checked ~ .pc {
+    --inputfont: sans-serif;
+    --inputfontsize: 1em;
+}
+.pc input
+, .pc textarea
+, .pc select {
+    font-family: var(--inputfont);
+    font-size: var(--inputfontsize);
+    color: #303030;
+}
+
+.pc input[type=text].xsmall {
+    width: 45px;
+}
+.pc input[type=text].small {
+    width: 80px;
+}
+.pc input[type=text].medium {
+    width: 155px;
+}
+input[type=text]::placeholder
+, textarea::placeholder {
+    color: #575957da;
+    text-transform: capitalize;
+    font-style: italic;
+    text-align: center;
+    font-size: 95%;
+}
+
+label {
+    width: auto;
+    font-weight: unset;
+    font-size: unset;
+    margin: 0px;
+    text-align: unset;
+    float: unset;
+    display: unset;
+    padding: unset;
+    line-height: unset;
+    white-space: nowrap;
+}
+
+.hidden
+, .npc
+, .settings {
+    display: none;
+}
+input[type=checkbox].settings-show:checked ~ .settings {
+    display: block;
+}
+input[type=checkbox].settings-show:checked ~ .sheets {
+    opacity: 0.5;
+    transition: opacity .15s ease-in-out;
+    -moz-transition: opacity .15s ease-in-out;
+    -webkit-transition: opacity .15s ease-in-out;
+    background-color: transparent;
+}
+input[type=checkbox].stl-cypher:checked ~ .npc
+, input[type=checkbox].stl-numenera:checked ~ .npc
+, input[type=checkbox].stl-strange:checked ~ .npc
+, input[type=checkbox].stl-tidal:checked ~ .npc
+, input[type=checkbox].stl-npc:checked ~ .pc {
+    display: none;
+}
+input[type=checkbox].stl-npc:checked ~ .npc {
+    display: block;
+}
+
+.copyright{
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+    margin: 0.5em;
+}
+.pc .stl-strange-only {
+    display: none;
+}
+input[type=checkbox].stl-strange:checked ~ .pc .stl-strange-only {
+    display: block;
+}
+
+.settings {
+    position: absolute;
+    width: 30em;
+    height: 25em;
+    left: 25.5em;
+    top: 14em;
+    background: white;
+    border: 0.1em solid #AAAAAA;
+    border-radius: 0.4em;
+    box-shadow: 0.5em 0.5em 1em rgba(87,89,87,0.8);
+    z-index: 20;
+}
+.in-settings {
+    position: relative;
+    padding: 2em;
+    display: flex;
+    justify-content: space-evenly;
+}
+.in-settings .title {
+    color: #575957;
+    font-size: 112%;
+    margin-top: 0.5em;
+}
+.version {
+    position: absolute;
+    bottom: 0.5em;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+}
+
+.flexcheck {
+	width: 50%;
+	flex: 1 0 calc(40% - 5px);
+}
+
+.flexcon {
+	display: flex;
+	text-align: center;	
+}
+
+.pc {
+    width: 78em;
+    padding: 0.2em;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: 100% !important;
+    background: var(--bgcolor);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: flex-start;
+    font-family: var(--mainfont);
+    font-size: 1em;
+    --inblockheight: 8.4em;
+    --subblockheight: 10em;
+}
+.pc .title {
+    text-shadow: 0 0 0.5em black;
+}
+input[type="checkbox"].stl-cypher:checked ~ .pc
+, input[type="checkbox"].stl-npc:checked ~ .npc
+, .sheet-rolltemplate-cyphsys .sheet-rtemplate0
+, .sheet-rolltemplate-cyphsys .sheet-rtemplate99 {
+    --mainfont: 'Contrail One';
+    --titlefont: 'Contrail One';
+    --placeholderfont: 'Contrail One';
+    --titlefontsize: 1.35em;
+    --subtitlefontsize: 1em;
+    --basebgcolor: #131110;
+    --bgcolor: linear-gradient(217deg, #131110, rgba(122,0,0,0) 70.71%),
+            linear-gradient(127deg, #131110, rgba(0,122,0,0) 70.71%),
+            linear-gradient(336deg, #131110, rgba(0,0,122,0) 70.71%);
+    --imgbg: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 120px, rgba(0,0,0, 0) 180px, rgba(0,0,0, 0) 100%), url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cypher%20Systems%20by%20Roll20/images/background_cypher.jpg');
+    --brdtitlecolor: #F5F1F0;
+    --imglogo: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cypher%20Systems%20by%20Roll20/images/logo_cypher.png');
+    --bottomhide: linear-gradient(to bottom,rgba(240,241,245, 0),rgba(245,241,240, 1) 60%);
+    --hovercolor: #BE202E;
+    --brdsubcolor: #374362;
+    --circleone: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cypher%20Systems%20by%20Roll20/images/circle_red.png');
+    --subtitlecolor: #18242E;
+    --glowcolor: rgba(254,74,72, 0.95);
+    --notablecolor: #BE202E;
+    --inblkbg: rgba(239,237,237, 0.85);
+}
+
+input[type="checkbox"].stl-numenera:checked ~ .pc
+, .sheet-rolltemplate-cyphsys .sheet-rtemplate1 {
+    --mainfont: 'Arial';
+    --titlefont: 'Shadows Into Light';
+    --titlefontsize: 1.35em;
+    --subtitlefontsize: 1.15em;
+    --placeholderfont: 'Arial';
+    --basebgcolor: #37261C;
+    --bgcolor: linear-gradient(217deg, #37261C, rgba(122,0,0,0) 70.71%),
+            linear-gradient(127deg, #37261C, rgba(0,122,0,0) 70.71%),
+            linear-gradient(336deg, #37261C, rgba(0,0,122,0) 70.71%);
+    --imgbg: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 120px, rgba(0,0,0, 0) 180px, rgba(0,0,0, 0) 100%), url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cypher%20Systems%20by%20Roll20/images/background_numenera.jpg');
+    --brdtitlecolor: #F2E8D5;
+    --imglogo: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cypher%20Systems%20by%20Roll20/images/logo_numenera.png');
+    --bottomhide: linear-gradient(to bottom,rgba(240,241,245, 0),rgba(242,232,213, 1) 60%);
+    --hovercolor: #F2C251;
+    --brdsubcolor: #634825;
+    --circleone: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cypher%20Systems%20by%20Roll20/images/circle_orange.png');
+    --subtitlecolor: #634825;
+    --glowcolor: rgba(242,194,81, 0.95);
+    --notablecolor: #D5812D;
+    --inblkbg: rgba(237,239,237, 0.85);
+}
+input[type="checkbox"].stl-strange:checked ~ .pc
+, .sheet-rolltemplate-cyphsys .sheet-rtemplate2 {
+    --mainfont: 'Times New Roman', Times, serif;
+    --titlefont: 'Times New Roman', Times, serif;
+    --titlefontsize: 1.35em;
+    --subtitlefontsize: 1em;
+    --placeholderfont: 'Times New Roman', Times, serif;
+    --basebgcolor: #071142;
+    --bgcolor: linear-gradient(217deg, #071142, rgba(122,0,0,0) 70.71%),
+            linear-gradient(127deg, #071142, rgba(0,122,0,0) 70.71%),
+            linear-gradient(336deg, #071142, rgba(0,0,122,0) 70.71%);
+    --imgbg: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 120px, rgba(0,0,0, 0) 180px, rgba(0,0,0, 0) 100%), url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cypher%20Systems%20by%20Roll20/images/background_thestrange.jpg');
+    --brdtitlecolor: #F0F1F5;
+    --imglogo: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cypher%20Systems%20by%20Roll20/images/logo_thestrange.png');
+    --bottomhide: linear-gradient(to bottom,rgba(240,241,245, 0),rgba(240,241,245, 1) 60%);
+    --hovercolor: #73F5F3;
+    --brdsubcolor: #6F8BAD;
+    --circleone: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cypher%20Systems%20by%20Roll20/images/circle_blue.png');
+    --subtitlecolor: #213E7A;
+    --glowcolor:rgba(115, 245, 243, 0.95);
+    --notablecolor: #3D61B3;
+    --inblkbg: rgba(237,237,239, 0.85);
+}
+input[type="checkbox"].stl-tidal:checked ~ .pc
+, .sheet-rolltemplate-cyphsys .sheet-rtemplate3 {
+    --mainfont: 'Times New Roman', Times, serif;
+    --titlefont: 'Times New Roman', Times, serif;
+    --titlefontsize: 1.35em;
+    --subtitlefontsize: 1em;
+    --placeholderfont: 'Times New Roman', Times, serif;
+    --basebgcolor: #071142;
+    --bgcolor: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(32,138,176,1) 0%, rgba(85,126,169,1) 100%);
+    --imgbg: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 120px, rgba(0,0,0, 0) 180px, rgba(0,0,0, 0) 100%), url('https://shadowrequiem.space/images/tidal/bg.png');
+    --brdtitlecolor: #F0F1F5;
+    --imglogo: url('https://shadowrequiem.space/images/tidal/tidallogo.png');
+    --bottomhide: linear-gradient(to bottom,rgba(240,241,245, 0),rgba(240,241,245, 1) 60%);
+    --hovercolor: #73F5F3;
+    --brdsubcolor: #6F8BAD;
+    --circleone: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cypher%20Systems%20by%20Roll20/images/circle_blue.png');
+    --subtitlecolor: #213E7A;
+    --glowcolor:rgba(115, 245, 243, 0.95);
+    --notablecolor: #3D61B3;
+    --inblkbg: rgba(237,237,239, 0.85);
+}
+input[type="checkbox"].easy-font:checked ~ input[type="checkbox"].stl-numenera:checked ~ .pc
+, input[type="checkbox"].easy-font:checked ~ input[type="checkbox"].stl-cypher:checked ~ .pc
+, input[type="checkbox"].easy-font:checked ~ input[type="checkbox"].stl-strange:checked ~ .pc
+, input[type="checkbox"].easy-font:checked ~ input[type="checkbox"].stl-tidal:checked ~ .pc
+, .sheet-rolltemplate-cyphsys .sheet-rtemplate0.font-easy
+, .sheet-rolltemplate-cyphsys .sheet-rtemplate1.font-easy
+, .sheet-rolltemplate-cyphsys .sheet-rtemplate2.font-easy
+, .sheet-rolltemplate-cyphsys .sheet-rtemplate3.font-easy
+, .sheet-rolltemplate-cyphsys .sheet-rtemplate99.font-easy {
+    --mainfont: sans-serif;
+    --titlefont: sans-serif;
+    --placeholderfont: sans-serif;
+    --titlefontsize: 1.3em;
+    --subtitlefontsize: 1em;
+}
+
+
+input[type="checkbox"].imgbg:checked ~ .pc {
+    background: var(--imgbg);
+}
+.pc input::placeholder
+, .pc textarea::placeholder {
+    font-family: var(--placeholderfont);
+}
+
+.mycol {
+    vertical-align: top;
+    width: 33%;
+    margin: 0px auto;
+}
+
+.logo {
+    max-height: 9em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: var(--imglogo);
+}
+
+.ablock {
+    display: flex;
+    position: relative;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 0;
+    margin-top: 0.5em;
+    border-color: var(--brdtitlecolor);
+}
+.ablock.identity
+, .ablock.logo
+, .ablock.tierseffortxp {
+    height: 9em;
+    border: none;
+    margin-top: 0;
+    border: none !important;
+}
+.ablock.identity {
+    justify-content: center;
+}
+.ablock.logo
+, .ablock.tierseffortxp {
+    align-items: center;
+}
+.ablock.stats {
+    align-items: flex-start;
+}
+.mycol.leftcol .ablock {
+    border-radius: 45px 8px 8px 6px/30px 8px 8px 6px;
+    border-width: 2px 1px 1px 1px;
+    border-style: solid dotted dotted solid;
+}
+.mycol.midcol .ablock {
+    border-radius: 6px;
+    border-width: 2px 1px 1px 1px;
+    border-style: solid dotted dotted dotted;
+}
+.mycol.rightcol .ablock {
+    border-radius: 6px 8px 8px 6px;
+    border-width: 2px 1px 1px 1px;
+    border-style: solid solid dotted dotted;
+}
+
+.inblock {
+    background-color: var(--inblkbg);
+    min-height: var(--inblockheight);
+    border-radius: 0px 0px 4px 4px;
+    border: 1px solid var(--brdtitlecolor);
+}
+.inblock.small {
+    min-height: 0;
+}
+.inblock.toppad {
+    padding-top: 1.8em;
+}
+
+.stats .inblock {
+    min-width: 7.5em;
+}
+.stats input[type=number] {
+    font-size: 1.35em;
+}
+
+.subblock {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    text-align: center;
+    margin: 0.3em;
+    position: relative;
+    min-height: var(--subblockheight);
+}
+input[type=checkbox].pseudocheck.expand:not(:checked) ~ .subblock {
+    height: var(--subblockheight);
+    overflow: hidden;
+    display: block;
+}
+input[type=checkbox].pseudocheck.expand:not(:checked) ~ .subblock:after {
+    content  : "";
+    position : absolute;
+    z-index  : 1;
+    bottom   : 0;
+    left     : 0;
+    pointer-events   : none;
+    background-image : var(--bottomhide);
+    width    : 100%;
+    height   : 4em;
+}
+input[type=checkbox].subsection-height:checked ~ .pc input[type=checkbox].pseudocheck.expand:checked ~ .subblock .inblock {
+    max-height: calc(var(--subblockheight)*2);
+    overflow-y: auto;
+}
+.subblock.wide {
+    width: 100%;
+}
+.subblock .title {
+    margin-bottom: 0.15em;
+}
+.title.dotted::before
+, .title.dotted::after {
+    content: "•";
+    margin: 0em 0.15em 0em 0.15em;
+}
+.subblock .title {
+    font-size: 120%;
+    line-height: 100%
+}
+
+.colblock {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 0.15em;
+}
+.colblock.left {
+    align-items: flex-start;
+}
+
+.pc input:focus
+, .pc input:hover
+, .pc select:focus
+, .pc select:hover
+, .pc textarea:focus
+, .pc textarea:hover {
+    border-color: transparent;
+    color: black;
+    background: white;
+    outline: none;
+    box-shadow: 0px 0px 20px var(--glowcolor);
+}
+
+.greybrd {
+    border: 1px solid #63686E;
+}
+
+.outline {
+    outline: 1px solid currentColor;
+}
+.whiteshadow {
+    text-shadow: 0 0 0.3em white;
+    box-shadow: 0 0 0.1em var(--brdtitlecolor);
+}
+
+.clearbg {
+    background: rgba(62, 67, 90, 0.9);
+}
+
+.title {
+    font-family: var(--titlefont);
+    font-size: var(--titlefontsize);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--brdtitlecolor);
+    white-space: nowrap;
+}
+
+.subtitle {
+    font-family: var(--titlefont);
+    font-size: var(--subtitlefontsize);
+    text-transform: uppercase;
+    color: var(--subtitlecolor);
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
+.lbl {
+    color: var(--subtitlecolor);
+}
+.skills .lbl
+, .attacks .lbl
+, .weapons .lbl {
+    min-width: 2.5em;
+    white-space: nowrap;
+}
+.abilities .lbl {
+    width: 1.5em;
+}
+
+.pc div.useaction {
+    display: block;
+}
+input[type="checkbox"].useaction:checked ~ .pc div.useaction {
+    display: none;
+}
+
+.identity .name {
+    width: 13.2em;
+}
+.identity .descriptor {
+    width: 8em;
+}
+.identity .type {
+    width: 4.8em;
+}
+.identity input {
+    height: 1.22em;
+    background: var(--brdtitlecolor);
+}
+.identity span {
+    min-width: 50px;
+    display: inline-block;
+    text-align: center;
+}
+
+.tierseffortxp{
+    text-align: center;
+}
+
+.circle {
+    position: relative;
+    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 6.5rem;
+    height: 6.5rem;
+    margin: 0.3em 0 0.3em 0;
+}
+.circle.small {
+    width: 4.7rem;
+    height: 4.7rem;
+}
+.circle input[type=number] {
+    display: inline-block;
+    margin: auto;
+    min-width: 1.35em;
+    max-width: 1.35em;
+    min-height: 1.35em;
+    max-height: 1.35em;
+    border-radius: 50%;
+    font-size: 3.5rem;
+    padding: 0;
+}
+.circle.small input[type=number] {
+    font-size: 2.5rem;
+}
+.circle.one {
+    background-image: var(--circleone);
+}
+.circle.green {
+    background-image: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cypher%20Systems%20by%20Roll20/images/circle_green.png');
+}
+.circle.orange {
+    background-image: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cypher%20Systems%20by%20Roll20/images/circle_orange.png');
+}
+
+.line {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    align-items: center;
+    width: 100%;
+    clear: both;
+}
+.line.wrap
+, .line.hide {
+    flex-flow: row wrap;
+}
+.line.action select {
+    max-width: 5em;
+    height: 1.3em;
+}
+.line.action input {
+    max-width: 2.5em;
+    height: 1.3em;
+}
+.line.action select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0px 3px 0px 3px;
+    margin: 0px 3px 0px 1px;
+}
+
+.line.damage-track span {
+    text-transform: uppercase;
+}
+.line.left {
+    justify-content: flex-start;
+}
+.line.stretch {
+    align-items: stretch;
+}
+
+.blockcontent * {
+    display: block !important;
+}
+
+.inlcontent {
+    white-space: nowrap;
+}
+.inlcontent * {
+    display: inline !important;
+}
+
+input[type=number].notable {
+    color: var(--notablecolor); /* #6D0100; */
+    font-weight:bold;
+    font-size:170%;
+}
+
+.center {
+    text-align: center;
+}
+
+.subborder {
+    border-style: solid;
+    border-width: 0;
+    border-color: var(--brdsubcolor);
+}
+.subborder.top {
+    border-top-width: 1px;
+}
+.subborder.left {
+    border-left-width: 1px;
+}
+.subborder.all {
+    border-width: 1px;
+    margin: 0 0.15em 0.15em 0;
+}
+.subborder.all:last-child {
+    margin: 0 0 0.15em 0;
+}
+.lightborder
+, input[type=text].lightborder
+, input[type=number].lightborder
+, select.lightborder
+, textarea.lightborder {
+    border: 1px dotted var(--brdsubcolor);
+}
+
+.help {
+    font-size: 0.9em;
+    font-style: italic;
+}
+.help::before {
+    content: "?";
+    font-family: "Pictos";
+    font-size: 1em;
+    margin-right: 0.15em;
+}
+
+input[type="checkbox"].used:checked ~ .used {
+    text-decoration: line-through;
+    color: var(--notablecolor);
+}
+
+/* === BUTTONS === */
+button[type="compendium"].myrol,
+button[type="roll"].myrol,
+button[type="action"].myrol {
+    text-align: center;
+    text-decoration: none;
+    background:none;
+    background-image:none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    font-family: unset;
+    font-size: unset;
+    text-shadow: none;
+    color: unset;
+    line-height: unset;
+    text-transform: unset;
+    text-align: unset;
+    vertical-align: unset;
+}
+button[type="roll"].myrol:before{
+    content: none;
+}
+button[type="compendium"].myrol:focus,
+button[type="roll"].myrol:focus,
+button[type="action"].myrol:focus {
+    outline:0;
+}
+.pc button[type="myroll"].show span {
+    color: var(--subtitlecolor);
+}
+.pc button[type="compendium"].myrol:hover
+, .pc button[type="compendium"].myrol:hover span
+, .pc button[type="action"].myrol:hover
+, .pc button[type="action"].myrol:hover span
+, .pc button[type="roll"].myrol:hover
+, .pc button[type="roll"].myrol:hover span {
+    color: var(--hovercolor);
+    text-shadow: 0 0 0.5em var(--subtitlecolor);
+    font-weight: bold;
+}
+.pc button[type="action"].myrol.reset span::before
+, .pc button[type="action"].myrol.rest span::before
+, .pc button[type="roll"].myrol.show span::before
+, .pc button[type="roll"].myrol.depletion span::before {
+    font-family: "Pictos";
+    text-transform: none;
+    margin-left: 0.15em;
+    margin-right: 0.15em;
+    font-size: 1.3em;
+}
+.pc button[type="roll"].myrol.roll span::before
+, .pc button[type="roll"].myrol.rollsmall span::before {
+    font-family: "dicefontd20";
+    text-transform: none;
+}
+.pc button[type="roll"].myrol.roll span::before {
+    margin-left: 0.15em;
+    margin-right: 0.15em;
+    font-size: 1.3em;
+    content: "A";
+}
+.pc button[type="roll"].myrol.rollsmall span::before {
+    margin-right: 0.3em;
+    font-size: 0.75em;
+    font-weight: normal;
+    content: "a";
+}
+.pc button[type="action"].myrol.reset span::before {
+    content: "1";
+}
+.pc button[type="action"].myrol.rest span::before {
+    content: "k";
+}
+.pc button[type="roll"].myrol.show span::before {
+    content: "w";
+}
+.pc button[type="roll"].myrol.depletion span::before {
+    content: "Y";
+}
+
+/* === PSEUDO CHECKS */
+input[type="checkbox"].pseudocheck {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+    line-height: 13px;
+    right: 0.15em;
+    top: 0em;
+    width: 1.2em;
+    height: 1.2em;
+}
+input[type="checkbox"].pseudocheck + span {
+    font-size: 1.2em;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    right: 0.15em;
+    top: 0em;
+    width: 1.2em;
+    height: 1.2em;
+    background: transparent;
+    line-height: 1.1em;
+}
+input[type="checkbox"].pseudocheck.expand + span
+, input[type="checkbox"].pseudocheck.showsettings + span {
+    color: var(--brdtitlecolor);
+}
+input[type="checkbox"].pseudocheck.hide + span {
+    color: var(--subtitlecolor);
+}
+input[type="checkbox"].pseudocheck.expand:hover + span
+, input[type="checkbox"].pseudocheck.showsettings:hover + span
+, input[type="checkbox"].pseudocheck.hide:hover + span {
+    color: var(--hovercolor);
+}
+input[type="checkbox"].pseudocheck.close + span {
+    color: #C9C8C9;
+}
+input[type="checkbox"].pseudocheck.close:hover + span {
+    color: #575957;
+    font-weight: bold;
+}
+input[type="checkbox"].pseudocheck + span::before {
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent;
+}
+input[type="checkbox"].pseudocheck.expand + span::before
+, input[type="checkbox"].pseudocheck.showsettings + span::before
+, input[type="checkbox"].pseudocheck.close + span::before
+, input[type="checkbox"].pseudocheck.hide + span::before {
+    font-family: "Pictos";
+}
+input[type="checkbox"].pseudocheck.expand:checked + span::before {
+    content: "[";
+    transform: rotate(90deg);
+}
+input[type="checkbox"].pseudocheck.expand + span::before {
+    content: "]";
+    transform: rotate(90deg);
+}
+input[type="checkbox"].pseudocheck.showsettings + span::before {
+    content: "y";
+}
+input[type="checkbox"].pseudocheck.close + span::before {
+    content: "*";
+}
+input[type="checkbox"].pseudocheck.hide + span::before {
+    content: "L";
+}
+
+.logo input[type="checkbox"].pseudocheck
+, .logo input[type="checkbox"].pseudocheck + span {
+    bottom: 0.3em;
+    top: unset;
+}
+.logo input[type="checkbox"].pseudocheck.showsettings
+, .logo input[type="checkbox"].pseudocheck.showsettings + span {
+    left: 0.15em;
+    right: unset;
+}
+
+div.hide {
+    display: none;
+}
+input[type="checkbox"].hide:checked ~ div.hide {
+    display: block;
+}
+
+/* === LABEL & PICTO CHECK */
+.labelcheck
+, .pictocheck {
+    margin-right: 0.1em;
+    cursor: pointer;
+    position: relative;
+    color: var(--subtitlecolor);
+}
+.labelcheck:last-child {
+    margin-right: 0;
+}
+.labelcheck input[type="checkbox"]
+, .labelcheck input[type="radio"]
+, .pictocheck input[type="checkbox"] {
+    opacity: 0;
+    z-index: +1;
+    position: absolute;
+}
+.labelcheck input[type="checkbox"] + span
+, .labelcheck input[type="radio"] + span
+, .pictocheck input[type="checkbox"] + span {
+    margin-left: 0px;
+    font-family: var(--titlefont);
+    font-size: var(--subtitlefontsize);
+}
+.labelcheck input[type="checkbox"] + span::before
+, .labelcheck input[type="radio"] + span::before
+, .pictocheck input[type="checkbox"] + span::before {
+    text-align: center;
+    display: inline-block;
+    line-height: 1em;
+    width: 1.2em;
+    height: 1em;
+    vertical-align: baseline;
+    background: transparent;
+    margin-right: 1px;
+}
+.labelcheck input[type="checkbox"] + span::before {
+    content: "☐";
+    font-size: 1.3em;
+}
+.labelcheck input[type="radio"] + span::before {
+    content: "◯";
+    font-size: 1em;
+}
+.labelcheck input[type="checkbox"]:checked + span::before,
+.labelcheck input[type="radio"]:checked + span::before {
+    content: "✔";
+    text-shadow: none;
+    font-size: 1.25em;
+}
+.labelcheck:hover input[type="checkbox"] + span::before,
+.labelcheck:hover input[type="radio"] + span::before {
+    text-shadow: none;
+}
+.labelcheck:hover input[type="checkbox"] + span
+, .labelcheck:hover input[type="radio"] + span
+, .labelcheck input[type="checkbox"]:checked + span
+, .labelcheck input[type="radio"]:checked + span {
+    text-shadow: 0px 0px 1px currentColor;
+}
+.pc .labelcheck input[type="checkbox"] + span,
+.pc .labelcheck input[type="radio"] + span {
+    text-transform: uppercase;
+}
+.pictocheck span {
+    color: var(--subtitlecolor);
+}
+.pictocheck:hover span
+, .pictocheck input[type="checkbox"]:checked + span {
+    color: var(--glowcolor);
+    text-shadow: 0 0 0.5em var(--subtitlecolor);
+}
+.pictocheck span::before {
+    font-family: "Pictos";
+    font-size: 1.3em;
+}
+.pictocheck.hide span::before {
+    content: "L";
+}
+
+/* ===== AUTO EXPAND TEXTAREA ===== */
+.autoex {
+    position: relative;
+    cursor: text;
+    text-align: left;
+}
+.pc .autoex {
+    font-family: var(--inputfont);
+    font-size: var(--inputfontsize);
+    line-height: 1.4em;
+    min-height: 1.4em;
+}
+.npc .autoex {
+    font-family: 'Arial';
+    font-size: 1em;
+    line-height: 1.2em;
+    min-height: 1.2em;
+}
+.pc .autoex span
+, .npc .autoex span {
+    visibility: hidden;
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    white-space: pre-wrap;
+    text-align: inherit;
+    min-height: inherit;
+}
+.pc .autoex textarea
+, .npc .autoex textarea {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    white-space: pre-wrap;
+    text-align: inherit;
+    min-height: inherit;
+    resize: none;
+}
+.pc .inblock.autoex {
+    min-height: 6.7em;
+}
+
+input[type="checkbox"].useasset ~ .pc .useasset
+, input[type="checkbox"].usebonus ~ .pc .usebonus
+, input[type="checkbox"].usecost ~ .pc .usecost {
+    display: none;
+}
+input[type="checkbox"].useasset:checked ~ .pc .useasset
+, input[type="checkbox"].usebonus:checked ~ .pc .usebonus
+, input[type="checkbox"].usecost:checked ~ .pc .usecost {
+    display: initial;
+}
+
+.floattopleft {
+    position: absolute;
+    z-index: 5;
+    left: 0em;
+    top: -0.7em;
+}
+.floatlow {
+    position:absolute;
+    bottom: 2%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.grow {
+    flex-grow: 1;
+    margin: 0 0.15em 0 0.15em;
+}
+
+.topmarg1 {
+    margin-top: 0.3em;
+}
+
+/* ===== LANGUAGES SPECIFICS ===== */
+.charsheet.lang-fr input[type="checkbox"].stl-strange:checked ~ .pc .stats .subblock .title
+, .charsheet.lang-es input[type="checkbox"].stl-strange:checked ~ .pc .stats .subblock .title
+, .charsheet.lang-pt input[type="checkbox"].stl-strange:checked ~ .pc .stats .subblock .title {
+    font-size: 105%;
+}
+.charsheet.lang-fr input[type="checkbox"].stl-cypher:checked ~ .pc .stats .subtitle
+, .charsheet.lang-es input[type="checkbox"].stl-cypher:checked ~ .pc .stats .subtitle 
+, .charsheet.lang-pt input[type="checkbox"].stl-cypher:checked ~ .pc .stats .subtitle {
+    font-size: calc(var(--subtitlefontsize) * 0.9);
+}
+.charsheet.lang-fr input[type="checkbox"].stl-strange:checked ~ .pc .stats .subtitle
+, .charsheet.lang-es input[type="checkbox"].stl-strange:checked ~ .pc .stats .subtitle
+, .charsheet.lang-pt input[type="checkbox"].stl-strange:checked ~ .pc .stats .subtitle{
+    font-size: calc(var(--subtitlefontsize) * 0.7);
+}
+.charsheet.lang-fr input[type="checkbox"].stl-numenera:checked ~ .pc .stats .subtitle
+, .charsheet.lang-es input[type="checkbox"].stl-numenera:checked ~ .pc .stats .subtitle
+, .charsheet.lang-pt input[type="checkbox"].stl-numenera:checked ~ .pc .stats .subtitle {
+    font-size: calc(var(--subtitlefontsize) * 0.79);
+}
+.charsheet.lang-fr .identity .title span {
+    font-size: calc(var(--titlefontsize) * 0.65);
+}
+
+/* === NPC === */
+.npc {
+    width: 52em;
+    padding: 0.2em;
+    background-position: top;
+    background-repeat: repeat;
+    background-size: 100% !important;
+    background: transparent;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: flex-start;
+    font-family: var(--mainfont);
+    font-size: 1.1em;
+    color: var(--subtitlecolor);
+    border-radius: 45px 8px 8px 6px/30px 8px 8px 6px;
+    border-width: 2px 1px 1px 1px;
+    border-style: solid dotted dotted solid;
+    border-color: var(--subtitlecolor);
+    padding: 0.7em;
+    box-shadow: 0 0 0.2em 0.3em rgb(245,241,240);
+    position: relative;
+}
+.npc .lab {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.npc input
+, .npc select
+, .npc textarea {
+    background: rgba(245,241,240,0.9);
+    border: 1px dotted var(--subtitlecolor);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0.15em;
+    font-size: 1em;
+}
+
+.npc input:hover
+, .npc select:hover
+, .npc textarea:hover {
+    box-shadow: inset 0px 0px 8px var(--glowcolor);
+}
+.npc input:focus
+, .npc select:focus
+, .npc textarea:focus {
+    border-style: solid;
+    box-shadow: inset 0px 0px 2px var(--glowcolor);
+    outline: none;
+}
+.npc .line {
+    flex-flow: row nowrap;
+    margin-bottom: 0.3em;
+    position: relative;
+}
+.npc input[type="checkbox"].pseudocheck.showsettings {
+    right: 0.3em;
+}
+.npc input[type="checkbox"].pseudocheck.showsettings + span {
+    color: var(--subtitlecolor);
+    right: 0.3em;
+}
+
+/* === REPEATING SECTION === */
+.repcontrol {
+    margin-top: 0.3rem;
+    padding: 0 0.5rem 0 0.5rem;
+}
+.repcontrol .btn {
+    border: none;
+    color: transparent !important;
+    background: none;
+    box-shadow: none;
+    font-size: 0rem;
+    padding: 0;
+    margin: 0;
+}
+.repcontrol .btn:focus {
+    outline: 0;
+}
+.repcontrol  .repcontrol_add {
+    float: left;
+}
+.repcontrol  .repcontrol_add:before,
+.repcontrol .repcontrol_edit:after {
+    font-size: 1.8rem;
+    font-family: "Pictos";
+    color: var(--subtitlecolor);
+}
+.repcontrol .repcontrol_add:before {
+    content: '+';
+}
+.repcontrol .repcontrol_edit:after {
+    content: '(';
+}
+.editmode ~ .repcontrol .repcontrol_edit:after {
+    content: ')';
+}
+.repcontrol .repcontrol_edit:hover:after,
+.repcontrol .repcontrol_add:hover:before {
+    color: var(--hovercolor);
+    text-shadow: 0 0 0.5em var(--subtitlecolor)
+}
+
+.repcontainer .repitem .itemcontrol {
+    z-index: 10;
+}
+.repcontainer .repitem .itemcontrol .repcontrol_del
+, .repcontainer .repitem .itemcontrol .repcontrol_move {
+    font-size: 1.7rem;
+    width: 2.4rem;
+}
+.repcontainer .repitem .itemcontrol .repcontrol_move {
+    float: left;
+    cursor: move;
+    height: 2rem;
+    padding: 0.15rem 0 0 0;
+}
+.repcontainer .repitem .itemcontrol .repcontrol_del {
+    height: 2.2rem;
+    padding: 0;
+}
+
+/* ===== ROLLTEMPLATES ===== */
+.sheet-rolltemplate-cyphsys .sheet-ablock {
+    background: var(--bgcolor);
+    border-radius: 45px 8px 8px 6px/30px 8px 8px 6px;
+    border-width: 2px 1px 1px 1px;
+    border-style: solid dotted dotted solid;
+    border-color: var(--brdtitlecolor);
+    padding: 0.4em;
+    font-family: "Arial";
+    color: #575957;
+    box-shadow: 0 0 0.3em 0.15em var(--basebgcolor);
+    margin-top: 0.2em;
+}
+.sheet-rolltemplate-cyphsys .sheet-line {
+    display: flex;
+    position: relative;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+.sheet-rolltemplate-cyphsys .sheet-line.sheet-left {
+    justify-content: flex-start;
+}
+.sheet-rolltemplate-cyphsys .sheet-padleft {
+    padding-left: 1.5em;
+}
+.sheet-rolltemplate-cyphsys .sheet-title {
+    font-family: var(--titlefont);
+    font-size: calc(var(--subtitlefontsize)*1.2);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--brdtitlecolor);
+}
+.sheet-rolltemplate-cyphsys .sheet-undertitle {
+    font-family: var(--titlefont);
+    font-size: var(--subtitlefontsize);
+    text-transform: uppercase;
+    color: var(--brdtitlecolor);
+}
+.sheet-rolltemplate-cyphsys .sheet-subtitle {
+    font-family: var(--titlefont);
+    font-size: var(--subtitlefontsize);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--subtitlecolor);
+}
+.sheet-rolltemplate-cyphsys .sheet-inblock {
+    background-color: var(--inblkbg);
+    color: var(--subtitlecolor);
+    border: 1px solid var(--brdtitlecolor);
+    margin-top: 0.35em;
+}
+.sheet-rolltemplate-cyphsys .sheet-inblock:first-child {
+    margin-top: 0.15em;
+}
+.sheet-rolltemplate-cyphsys .sheet-inblock:last-child {
+    border-radius: 0px 0px 4px 4px;
+}
+.sheet-rolltemplate-cyphsys .sheet-description {
+    overflow-y: auto;
+    max-height: 9em;
+}
+.sheet-rolltemplate-cyphsys .sheet-notable {
+    font-weight: bold;
+    color: var(--notablecolor);
+    text-align: center;
+}
+/* Rolls */
+.sheet-rolltemplate-cyphsys .inlinerollresult
+, .sheet-rolltemplate-cyphsys .sheet-pseudoroll {
+    background-color: transparent;
+    border: none;
+    padding: 0px 0px;
+    font-weight: bold;
+    cursor: help;
+    font-size: 18px;
+    padding: 2px;
+    font-family: var(--inputfontsize);
+}
+.sheet-rolltemplate-cyphsys .inlinerollresult
+, .sheet-rolltemplate-cyphsys .sheet-pseudoroll {
+    color: #182C4A;
+}
+
+.sheet-rolltemplate-cyphsys .sheet-resright .inlinerollresult {
+    font-size: 1.6em;
+    line-height: 1.45em;
+}
+.sheet-rolltemplate-cyphsys .sheet-success
+, .sheet-rolltemplate-cyphsys .sheet-subtitle.sheet-success
+, .sheet-rolltemplate-cyphsys .sheet-pseudoroll.sheet-success {
+    color: #247305;
+    text-transform: uppercase;
+}
+.sheet-rolltemplate-cyphsys .sheet-failure
+, .sheet-rolltemplate-cyphsys .sheet-subtitle.sheet-failure
+, .sheet-rolltemplate-cyphsys .sheet-pseudoroll.sheet-failure {
+    color: #BE202E;
+    text-transform: uppercase;
+}
+.sheet-rolltemplate-cyphsys .inlinerollresult.fullcrit {
+    border: none;
+    color: #247305;
+}
+.sheet-rolltemplate-cyphsys .inlinerollresult.importantroll {
+    border: none;
+    color: #4A57ED;
+}
+.sheet-rolltemplate-cyphsys .inlinerollresult.fullfail {
+    border: none;
+    color: #BE202E;
+}
+
+.sheet-rolltemplate-cyphsys a
+, .sheet-rolltemplate-cyphsys a[href^="!"]
+, .sheet-rolltemplate-cyphsys a[href^="~"] {
+    font-family: var(--titlefont);
+    font-size: var(--subtitlefontsize);
+    color: var(--subtitlecolor);
+    background-color: transparent;
+    padding: 0.15em;
+    display: inline-block;
+    border: none;
+}
+.sheet-rolltemplate-cyphsys a:before
+, .sheet-rolltemplate-cyphsys a[href^="!"]:before
+, .sheet-rolltemplate-cyphsys a[href^="~"]:before {
+    content: "j";
+    font-family: "Pictos";
+    text-transform: lowercase;
+    margin: 0em 0.15em 0em 0em;
+}
+.sheet-rolltemplate-cyphsys a:hover
+, .sheet-rolltemplate-cyphsys a[href^="!"]:hover
+, .textchatcontainer .sheet-rolltemplate-cyphsys a[href^="~"]:hover {
+    text-decoration: none !important;
+    color: var(--glowcolor) !important;
+}
