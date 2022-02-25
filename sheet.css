@@ -595,7 +595,7 @@ input[type="checkbox"].useaction:checked ~ .pc div.useaction {
     clear: both;
 }
 .line.wrap
-, .line.hide {
+, .line.hidevoid {
     flex-flow: row wrap;
 }
 .line.action select {
@@ -629,6 +629,8 @@ input[type="checkbox"].useaction:checked ~ .pc div.useaction {
 
 .inlcontent {
     white-space: nowrap;
+	padding-right: 0px !important;
+	width: auto !important;
 }
 .inlcontent * {
     display: inline !important;
@@ -798,12 +800,12 @@ input[type="checkbox"].pseudocheck.expand + span
 , input[type="checkbox"].pseudocheck.showsettings + span {
     color: var(--brdtitlecolor);
 }
-input[type="checkbox"].pseudocheck.hide + span {
+input[type="checkbox"].pseudocheck.hidevoid + span {
     color: var(--subtitlecolor);
 }
 input[type="checkbox"].pseudocheck.expand:hover + span
 , input[type="checkbox"].pseudocheck.showsettings:hover + span
-, input[type="checkbox"].pseudocheck.hide:hover + span {
+, input[type="checkbox"].pseudocheck.hidevoid:hover + span {
     color: var(--hovercolor);
 }
 input[type="checkbox"].pseudocheck.close + span {
@@ -822,7 +824,7 @@ input[type="checkbox"].pseudocheck + span::before {
 input[type="checkbox"].pseudocheck.expand + span::before
 , input[type="checkbox"].pseudocheck.showsettings + span::before
 , input[type="checkbox"].pseudocheck.close + span::before
-, input[type="checkbox"].pseudocheck.hide + span::before {
+, input[type="checkbox"].pseudocheck.hidevoid + span::before {
     font-family: "Pictos";
 }
 input[type="checkbox"].pseudocheck.expand:checked + span::before {
@@ -839,7 +841,7 @@ input[type="checkbox"].pseudocheck.showsettings + span::before {
 input[type="checkbox"].pseudocheck.close + span::before {
     content: "*";
 }
-input[type="checkbox"].pseudocheck.hide + span::before {
+input[type="checkbox"].pseudocheck.hidevoid + span::before {
     content: "L";
 }
 
@@ -854,10 +856,10 @@ input[type="checkbox"].pseudocheck.hide + span::before {
     right: unset;
 }
 
-div.hide {
+div.hidevoid {
     display: none;
 }
-input[type="checkbox"].hide:checked ~ div.hide {
+input[type="checkbox"].hidevoid:checked ~ div.hidevoid {
     display: block;
 }
 
@@ -938,7 +940,7 @@ input[type="checkbox"].hide:checked ~ div.hide {
     font-family: "Pictos";
     font-size: 1.3em;
 }
-.pictocheck.hide span::before {
+.pictocheck.hidevoid span::before {
     content: "L";
 }
 
