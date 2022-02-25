@@ -631,6 +631,7 @@ input[type="checkbox"].useaction:checked ~ .pc div.useaction {
     white-space: nowrap;
 	padding-right: 0px !important;
 	width: auto !important;
+	display: inline-block !important;
 }
 .inlcontent * {
     display: inline !important;
